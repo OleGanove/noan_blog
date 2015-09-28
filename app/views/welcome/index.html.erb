@@ -1,0 +1,34 @@
+    <div class="wrapper wrapper_padding clearfix">
+      <div class="col-1 about homepage_content">
+        <h2>About</h2>
+        <hr>
+        <p>
+        	Cardigan readymade PBR&amp;B, synth mixtape messenger bag hella banh mi Schlitz. Schlitz Banksy polaroid, +1 occupy small batch Kickstarter migas twee <a href="#">YOLO</a> American Apparel 8-bit skateboard four dollar toast art party. 
+        </p>
+        <p>
+			Pug next level squid hoodie, church-key typewriter Truffaut. 8-bit you probably haven't heard of them health goth Intelligentsia DIY. Banjo swag tattooed 90's freegan, listicle fingerstache seitan biodiesel blog.
+		</p>
+      </div>
+
+      <div class="col-2 homepage_content">
+        <h2>Stuff I've written</h2>
+        <hr>
+
+        <% @posts.each do |post| %>
+          <h3><a href="#"><%= link_to post.title, post %></a></h3>
+          <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+        <% end %>
+        
+      </div>
+
+      <div class="col-3 homepage_content">
+        <h2>Stuff I've built</h2>
+        <hr>
+        <h3><a href="#">Unicasts</a></h3>
+        <a class="date">Friday April 10th</a>
+        <h3><a href="#">Mackenzie Child Community</a></h3>
+        <a class="date">Friday April 10th</a>
+        <h3><a href="#">12 in 12 challenge</a></h3>
+        <a class="date">Friday April 10th</a>
+      </div>
+    </div>
