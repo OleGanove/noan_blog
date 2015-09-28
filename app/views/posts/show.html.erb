@@ -1,0 +1,9 @@
+<%= @post.title %><br>
+<%= @post.content %> 
+
+
+<br>
+<br>
+
+<%= link_to "Bearbeiten", edit_post_path(@post) %>
+<%= link_to "Löschen", post_path(@post), method: :delete, data: { confirm: "Bist du sicher, dass du den Post löschen willst?" } %>
