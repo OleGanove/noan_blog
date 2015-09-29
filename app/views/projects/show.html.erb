@@ -12,5 +12,7 @@
     </div>
   </div>
 
+  <%= link_to "Bearbeiten", edit_project_path(@project) %>
+  <%= link_to "Löschen", project_path(@project), method: :delete, data: { confirm: "Sicher, dass du das Projekt löschen willst?" } %>
   <hr>
 </div>
