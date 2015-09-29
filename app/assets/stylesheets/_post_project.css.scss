@@ -30,6 +30,14 @@
 		border-bottom: 1px solid #E9E9E9;
 		padding-bottom: 2em;
 		margin-bottom: 5em;
+
+		a { 
+			color: $highlight;
+			text-decoration: none;
+			&:hover {
+				color: $dark;
+			}
+		}
 	}
 }
 
