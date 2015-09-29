@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-
+  before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
   	@projects = Project.all.order("created_at desc")
@@ -14,7 +13,7 @@ class ProjectsController < ApplicationController
   def create
   	@project = Project.new(project_params)
   	if @project.save
-  	  redirect_to @project, notice: "Yay, neues Projekt erstellt!"
+  	  redirect_to @project, notice: "Yay Anna, neues Projekt erstellt!"
   	else
   	  render 'new'
   	end
@@ -28,7 +27,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: "Yay, du hast dein Projekt aktualisiert!"
+      redirect_to @project, notice: "Yay Anna, du hast dein Projekt aktualisiert!"
     else
       render 'edit'
     end

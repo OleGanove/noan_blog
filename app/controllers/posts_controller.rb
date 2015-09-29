@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+
   
   def index
     @posts = Post.all.order("created_at desc").paginate(page: params[:page], per_page: 10)
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
   	if @post.update(post_params)
-  	  redirect_to @post, notice: "Huzzah! Der Artikel wurde aktualisiert!"
+  	  redirect_to @post, notice: "Huzzah, Anna! Der Artikel wurde aktualisiert!"
   	else
   	  render 'edit'
   	end
