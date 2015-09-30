@@ -3,6 +3,9 @@
       <header>
         <p class="date"><%= @post.created_at.strftime('%A, %B %d')%></p>
         <h1><%= @post.title %></h1>
+        <% if !@user.nil? %>
+          <h2>written by <%= @user.email %></h2>
+        <% end %>
         <hr>
       </header>
 
@@ -10,7 +13,7 @@
       	<%= markdown  @post.content %>
   	  </div>
 
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user == @user %>
         <div id="admin_links">
         <%= link_to "Bearbeiten", edit_post_path(@post) %>
         <%= link_to "Löschen", post_path(@post), method: :delete, data: { confirm: "Bist du sicher, dass du den Post löschen möchtest?" } %>
