@@ -3,9 +3,6 @@
       <header>
         <p class="date"><%= @post.created_at.strftime('%A, %B %d')%></p>
         <h1><%= @post.title %></h1>
-        <% if !@user.nil? %>
-          <h2>written by <%= @user.email %></h2>
-        <% end %>
         <hr>
       </header>
 
