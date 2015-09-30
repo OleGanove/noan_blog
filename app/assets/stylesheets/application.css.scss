@@ -37,7 +37,8 @@ body {
 }
 
 .clearfix:after {
-	clear:both;
+    display:block;
+    clear:both;
 }
 
 .hidden {
@@ -96,38 +97,6 @@ hr {
 	margin: 2rem 0;
 }
 
-#main_navigation {
-	padding: 2.5em 5%;
-	border-bottom: 1px solid $border;
-
-	.name {
-		font-weight: 700;
-		font-size: .8em;
-		text-transform: uppercase;
-		letter-spacing: 4px;
-		border: 2px solid $border;
-		padding: 1rem;
-		text-decoration: none;
-		color: $dark;
-		float: left;
-	}
-
-	nav {
-		padding-top: 1.25rem;
-		float: right;
-
-		a {
-			color: $dark;
-			text-decoration: none;
-			margin: 0 1rem;
-			font-size: 1rem;
-
-			&:hover {
-				color: $highlight;
-			}
-		}
-	}
-}
 
 #page_title {
 	text-align: center;
@@ -200,6 +169,11 @@ input[type="submit"], .button {
 	margin: 4em 0 0 0;
 	text-align: center;
 }
+
+
+
+
+@import 'header';
 @import 'welcome';
 @import 'post_project';
 @import 'pygments';

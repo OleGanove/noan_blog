@@ -10,35 +10,13 @@
 </head>
 
 <body>
-  <header id="main_navigation" class="clearfix">
-    <%= link_to "noan", root_path, class: "name" %>
-    <nav> 
-      <%= link_to "Posts", posts_path %>
-      <%= link_to "Projekte", projects_path %>
-      <%= link_to "Kontakt", new_contact_path %>
-      <% if user_signed_in? %>
-        <%= link_to "Neuer Post", new_post_path %>
-        <%= link_to "Neues Projekt", new_project_path %>
-        <%= link_to "Ausloggen", destroy_user_session_path, method: :delete %>
-      <% end %>
-    </nav>
-  </header>
 
-  <% if notice %>
-    <p class="notice"><%= notice %></p>
-  <% elsif alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/notice' %>
 
   <%= yield %>
   
-  <footer id="main_footer">
-    <p class="copyright">&copy; 2015 Nogo Versitaet</p>
-    <nav>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-  	  <a href="#"><i class="fa fa-dribbble"></i></a>
-   	  <a href="#"><i class="fa fa-github"></i></a>
-    </nav>
-  </footer>
+  <%= render 'layouts/footer' %>
+
 </body>
 </html>

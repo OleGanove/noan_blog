@@ -1,0 +1,20 @@
+  <header id="main_navigation" class="clearfix">
+    <%= link_to "noan", root_path, class: "name" %>
+    <nav class="menu"> 
+      <ul>
+        <li><%= link_to "Posts", posts_path %></li>
+        <li><%= link_to "Projekte", projects_path %></li>
+        <li><%= link_to "Kontakt", new_contact_path %></li>
+        <% if user_signed_in? %>
+          <li><a href="#">Admin <span class="arrow">&#9660;</span></a>
+            <ul class="sub-menu">
+              <li><%= link_to "Neuer Post", new_post_path %></li>
+              <li><%= link_to "Neues Projekt", new_project_path %></li>
+              <li><%= link_to "Ausloggen", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+
+    </nav>
+  </header>
