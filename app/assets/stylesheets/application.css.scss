@@ -1,8 +1,8 @@
 @import 'normalize';
 
-$dark: #424652;
+$dark: #1A3140/*#424652*/;
 $light: #9a9da4;
-$highlight: #8bc6db;
+$highlight: #D9304F /*#8bc6db*/;
 $border: #E9E9E9;
 $white: #FFFFFF;
 
@@ -97,6 +97,13 @@ hr {
 	margin: 2rem 0;
 }
 
+a {
+	text-decoration: none;
+	color: $highlight;
+	&:hover {
+		color: $dark;
+	}
+}
 
 #page_title {
 	text-align: center;
