@@ -15,9 +15,9 @@ class PostsController < ApplicationController
   	@post = current_user.posts.build(post_params)
 
   	if @post.save
-  	  redirect_to @post, notice: "Hell ya, Anna, der Artikel wurde supi gespeichert."
+  	  redirect_to @post, notice: "Hell ya, #{current_user.username}, der Artikel wurde supi gespeichert."
   	else
-  	  render 'new', notice: "Oh no, Anna, der Artikel konnte nicht gespeichert werden."
+  	  render 'new', notice: "Oh no, #{current_user.username}, der Artikel konnte nicht gespeichert werden."
   	end
   end 
 
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
   	if @post.update(post_params)
-  	  redirect_to @post, notice: "Huzzah, Anna! Der Artikel wurde aktualisiert!"
+  	  redirect_to @post, notice: "Huzzah, #{current_user.username}! Der Artikel wurde aktualisiert!"
   	else
   	  render 'edit'
   	end

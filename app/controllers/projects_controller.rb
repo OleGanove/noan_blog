@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   def create
   	@project = Project.new(project_params)
   	if @project.save
-  	  redirect_to @project, notice: "Yay Anna, neues Projekt erstellt!"
+  	  redirect_to @project, notice: "Yay #{current_user.username}, neues Projekt erstellt!"
   	else
   	  render 'new'
   	end
@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: "Yay Anna, du hast dein Projekt aktualisiert!"
+      redirect_to @project, notice: "Yay #{current_user.username}, du hast dein Projekt aktualisiert!"
     else
       render 'edit'
     end
